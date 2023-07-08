@@ -9,6 +9,10 @@ import Toybox.System;
 (:background)
 class AudioShareApp extends Application.AudioContentProviderApp {
 
+    function getProviderIconInfo() {
+        return new Media.ProviderIconInfo(Rez.Drawables.LauncherIcon, 0x00E2E2);
+    }
+
     function initialize() {
         AudioContentProviderApp.initialize();
         Background.registerForPhoneAppMessageEvent();
@@ -34,12 +38,14 @@ class AudioShareApp extends Application.AudioContentProviderApp {
 
     // Get the initial view for configuring playback
     function getPlaybackConfigurationView() as Array<Views or InputDelegates>? {
-        return [ new AudioShareConfigurePlaybackView(), new AudioShareConfigurePlaybackDelegate() ] as Array<Views or InputDelegates>;
+        // return [ new AudioShareConfigurePlaybackView(), new AudioShareConfigurePlaybackDelegate() ] as Array<Views or InputDelegates>;
+        return [ new AudioShareConfigurePlaybackView() ] as Array<Views or InputDelegates>;
     }
 
     // Get the initial view for configuring sync
     function getSyncConfigurationView() as Array<Views or InputDelegates>? {
-        return [ new AudioShareConfigureSyncView(), new AudioShareConfigureSyncDelegate() ] as Array<Views or InputDelegates>;
+        // return [ new AudioShareConfigureSyncView(), new AudioShareConfigureSyncDelegate() ] as Array<Views or InputDelegates>;
+        return [ new AudioShareConfigureSyncView() ] as Array<Views or InputDelegates>;
     }
 
     function getServiceDelegate() as Array<ServiceDelegate> {

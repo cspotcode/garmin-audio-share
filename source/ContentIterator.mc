@@ -15,7 +15,7 @@ class AudioShareContentIterator extends Media.ContentIterator {
 
     // Get the current media content object.
     function get() as Content? {
-        System.println("Logging from code");
+        System.println("ContentIterator get()");
         // var ref = new ContentRef(10, CONTENT_TYPE_AUDIO);
         // var meta = new ContentMetadata();
         // var c = new Content(ref, meta);
@@ -26,12 +26,15 @@ class AudioShareContentIterator extends Media.ContentIterator {
 
     // Get the current media content playback profile
     function getPlaybackProfile() as PlaybackProfile? {
+        System.println("ContentIterator getPlaybackProfile()");
         var profile = new Media.PlaybackProfile();
         profile.attemptSkipAfterThumbsDown = false;
         profile.playbackControls = [
             PLAYBACK_CONTROL_SKIP_BACKWARD,
             PLAYBACK_CONTROL_PLAYBACK,
-            PLAYBACK_CONTROL_SKIP_FORWARD
+            PLAYBACK_CONTROL_SKIP_FORWARD,
+            PLAYBACK_CONTROL_LIBRARY,
+            PLAYBACK_CONTROL_SOURCE
         ] as Array<PlaybackControl or CustomButton or SystemButton>;
         profile.playbackNotificationThreshold = 1;
         profile.requirePlaybackNotification = false;

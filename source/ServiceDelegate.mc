@@ -12,7 +12,7 @@ class AudioShareServiceDelegate extends ServiceDelegate {
 
     function onPhoneAppMessage(msg as PhoneAppMessage) {
         var _o = Background.getBackgroundData();
-        println("old data");
+        System.println("old data");
         println(_o);
         if (_o == null) {
             _o = {};

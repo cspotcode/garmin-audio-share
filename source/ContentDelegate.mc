@@ -17,21 +17,21 @@ class AudioShareContentDelegate extends Media.ContentDelegate {
         return new AudioShareContentIterator();
     }
 
-    // Respond to a user ad click
-    function onAdAction(adContext as Object) as Void {
-    }
+    // // Respond to a user ad click
+    // function onAdAction(adContext as Object) as Void {
+    // }
 
-    // Respond to a thumbs-up action
-    function onThumbsUp(contentRefId as Object) as Void {
-    }
+    // // Respond to a thumbs-up action
+    // function onThumbsUp(contentRefId as Object) as Void {
+    // }
 
-    // Respond to a thumbs-down action
-    function onThumbsDown(contentRefId as Object) as Void {
-    }
+    // // Respond to a thumbs-down action
+    // function onThumbsDown(contentRefId as Object) as Void {
+    // }
 
-    // Respond to a command to turn shuffle on or off
-    function onShuffle() as Void {
-    }
+    // // Respond to a command to turn shuffle on or off
+    // function onShuffle() as Void {
+    // }
 
     // Handles a notification from the system that an event has
     // been triggered for the given song
@@ -40,4 +40,7 @@ class AudioShareContentDelegate extends Media.ContentDelegate {
     //     // // System.println(songEvent);
     //     // System.println(playbackPosition);
     // }
+    function onSong(contentRefId, songEvent, playbackPosition) as Void {
+        Media.stopPlayback();
+    }
 }
